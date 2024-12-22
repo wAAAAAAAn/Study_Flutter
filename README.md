@@ -17,6 +17,6 @@
 ```plaintext
 📦 flutter-study
 ┣ 📂 Wan
-┣ 📂 Dog
+┣ 📂 Dog # 이름을 정해주시죠 ^^
 
 
