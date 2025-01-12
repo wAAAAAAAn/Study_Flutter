@@ -67,18 +67,35 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 1,
             child: Container(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                format(totalSeconds),
-                style: TextStyle(
-                    color: Theme.of(context).textTheme.displayLarge?.color ??
-                        Colors.red,
-                    fontSize:
-                        Theme.of(context).textTheme.displayLarge?.fontSize ??
-                            89,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  children: [
+                    //min
+                    TextField(
+                      readOnly: isRunning,
+                      showCursor: false,
+                      onChanged: (value) {
+                        int leftSec = totalSeconds % 60;
+                        totalSeconds = int.parse(value) * 60 + leftSec;
+                      },
+                    ),
+                    //sec
+                    TextField(
+                      readOnly: isRunning,
+                    )
+                  ],
+                )
+                // Text(
+                //   format(totalSeconds),
+                //   style: TextStyle(
+                //       color: Theme.of(context).textTheme.displayLarge?.color ??
+                //           Colors.red,
+                //       fontSize:
+                //           Theme.of(context).textTheme.displayLarge?.fontSize ??
+                //               89,
+                //       fontWeight: FontWeight.bold),
+                // ),
+                ),
           ),
           Flexible(
             flex: 3,

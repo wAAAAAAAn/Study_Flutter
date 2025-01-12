@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:self_introduce/widgets/linkButtonWidget.dart';
 
 import './widgets/contactInfoWidget.dart';
@@ -350,19 +349,6 @@ class MainApp extends StatelessWidget {
                   ],
                 ),
               )),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCertificationItem(String title, String date) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(child: Text(title)),
-          Text(date, style: const TextStyle(color: Colors.grey)),
         ],
       ),
     );
