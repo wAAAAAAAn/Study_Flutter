@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class WebtoonEpisodeModel {
   final String id, title, rating, date, thumb;
 
