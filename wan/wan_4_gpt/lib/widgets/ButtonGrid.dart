@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wan_3_webtoon/button_data_model.dart';
 import 'package:wan_3_webtoon/button_data_service.dart';
 import 'package:wan_3_webtoon/widgets/ClothButton.dart';
+import 'package:wan_3_webtoon/widgets/ImageDetail.dart';
 
 class ButtonGrid extends StatefulWidget {
   final Function(String) onItemSelected;
@@ -29,11 +30,19 @@ class _ButtonGridState extends State<ButtonGrid> {
     });
   }
 
-  void _onButtonSelected(int index, String title) {
+  void _onButtonSelected(int index, ButtonData title) {
     setState(() {
       _selectedIndex = index;
     });
-    widget.onItemSelected(title);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ImageDetailPage(
+          data: title,
+        ),
+      ),
+    );
   }
 
   @override
@@ -48,12 +57,12 @@ class _ButtonGridState extends State<ButtonGrid> {
         children: List.generate(buttonList.length, (index) {
           final ButtonData data = buttonList[index];
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: HighlightedImageButton(
               imagePath: data.imagePath,
               title: data.title,
               isSelected: _selectedIndex == index,
-              onPressed: () => _onButtonSelected(index, data.title),
+              onPressed: () => _onButtonSelected(index, data),
             ),
           );
         }),

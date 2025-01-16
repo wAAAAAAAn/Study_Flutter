@@ -34,27 +34,16 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 50,
-          ),
-          ButtonGrid(
-            onItemSelected: _updateSelectedTitle, // 콜백 전달
+          Expanded(
+            child: ButtonGrid(
+              onItemSelected: _updateSelectedTitle, // 콜백 전달
+            ),
           ),
           const SizedBox(
             height: 30,
-          ),
-          Text(
-            _selectedTitle == "선택된 아이템 없음"
-                ? "선택된 아이템 없음"
-                : '$_selectedTitle 뭔지 궁금하십니까?\n물어보세용', // 선택된 타이틀 표시
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          GPTQuestionWidget(
-            productName: _selectedTitle,
           ),
         ],
       ),
