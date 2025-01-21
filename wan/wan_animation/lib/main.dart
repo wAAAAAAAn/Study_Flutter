@@ -1,4 +1,4 @@
-import 'package:animation/screens/menu_screen.dart';
+import 'package:wan_animation/screens/menu_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
