@@ -1,3 +1,4 @@
+import 'package:wan_animation/screens/AppleWatchScreen.dart';
 import 'package:wan_animation/screens/ExplicitAnimationscreen.dart';
 import 'package:wan_animation/screens/ImplicitAnimationScreens.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,12 @@ class MenuScreen extends StatelessWidget {
                 onPressed: () {
                   navigatorScreen(context, const ExplicitAnimationScreen());
                 },
-                child: const Text("ExplicitAnimationScreen"))
+                child: const Text("ExplicitAnimationScreen")),
+            ElevatedButton(
+                onPressed: () {
+                  navigatorScreen(context, const Applewatchscreen());
+                },
+                child: const Text("Applewatchscreen"))
           ],
         ),
       ),
